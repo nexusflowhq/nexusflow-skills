@@ -1,0 +1,30 @@
+name: 创建草稿发行版
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - name: 检查版本标签
+        run: |
+          python -c 'import os; from pathlib import Path; v = Path("VERSION").read_text().strip(); assert os.environ["GITHUB_REF_NAME"] == "v" + v, "Tag must match VERSION"'
+      - run: python scripts/validate.py
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/package.py
+      - name: 创建草稿并上传发布文件
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*/*.zip dist/*/SHA256SUMS.txt --verify-tag --draft --title "$GITHUB_REF_NAME" --notes-file CHANGELOG.md

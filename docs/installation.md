@@ -1,6 +1,6 @@
 # 安装指南
 
-当前尚无可安装技能，以下是仓库加入技能并公开后的安装约定。
+当前已收录 `sps-to-nexusflow` 和 `synergigas-to-nexusflow`，尚未发布正式安装包。可以从本地仓库复制完整技能目录，按客户端文档安装；公开发布后的下载方式如下。
 
 ## 从正式版本下载
 
@@ -19,7 +19,7 @@
 
 ```bash
 npx skills add YOUR_ORG/nexusflow-skills --list
-npx skills add YOUR_ORG/nexusflow-skills --skill nexusflow-example -a codex
+npx skills add YOUR_ORG/nexusflow-skills --skill sps-to-nexusflow -a codex
 ```
 
 该示例尚不可直接使用。安装范围、其他客户端和升级操作以安装工具的当前文档为准。

@@ -11,7 +11,7 @@
 ## 新增技能
 
 1. 先说明目标用户、触发场景和预期输出，避免与已有技能重复。
-2. 阅读 [编写规范](docs/authoring.md)，创建 `skills/nexusflow-<task>/SKILL.md`。
+2. 阅读 [编写规范](docs/authoring.md)，创建 `skills/nexusflow-<task>/SKILL.md`；迁移类技能可使用 `skills/<source>-to-nexusflow/SKILL.md`。
 3. 将必要的脚本、参考资料、模板放入该技能目录。不要依赖其他技能已安装。
 4. 在 README 技能目录中登记，并更新 [兼容性记录](docs/compatibility.md)。
 5. 为正常、异常和不应触发的场景提供输入、预期结果与验证记录。

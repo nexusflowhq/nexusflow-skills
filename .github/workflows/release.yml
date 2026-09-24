@@ -22,6 +22,8 @@ jobs:
           python -c 'import os; from pathlib import Path; v = Path("VERSION").read_text().strip(); assert os.environ["GITHUB_REF_NAME"] == "v" + v, "Tag must match VERSION"'
       - run: python scripts/validate.py
       - run: python -m unittest discover -s tests -v
+      - run: python -B skills/sps-to-nexusflow/scripts/test_conversion_tools.py
+      - run: python -B -m unittest discover -s skills/synergigas-to-nexusflow/tests -v
       - run: python scripts/package.py
       - name: 创建草稿并上传发布文件
         env:

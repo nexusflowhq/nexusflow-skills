@@ -4,17 +4,22 @@
 
 本仓库默认使用**简体中文**，包括使用文档、贡献说明和技能说明。技术标识、标准字段、命令和文件名保留原文。
 
-**当前状态：仓库骨架，尚未加入任何技能，也未发布安装包。**
+**当前状态：已收录 2 个迁移技能，已完成结构检查和离线合成测试；尚未发布正式安装包，平台端迁移与求解兼容性未验证。**
 
 ## 技能目录
 
-暂无。新技能统一放在 `skills/<nexusflow-skill-name>/`，每个技能以 `SKILL.md` 为入口。
+| 技能 | 用途 | 工具范围 |
+| --- | --- | --- |
+| [SPS → NexusFlow](skills/sps-to-nexusflow/SKILL.md) | SPS 气体管网迁移、单位与组分转换、曲线和拓扑核查 | 离线辅助工具，不是完整 SPS 解释器 |
+| [SynergiGas → NexusFlow](skills/synergigas-to-nexusflow/SKILL.md) | MDB 模型迁移、边界及拓扑审计、稳态与瞬态校验 | 离线结构检查，不是通用 MDB 转换器 |
+
+技能不附带实际工程案例或平台凭据。文档与测试中的数据为明确标注的合成示例，详见 [入库检查记录](docs/reviews/2026-09-24-migration-skills.md)。每个技能以 `SKILL.md` 为入口。
 
 ## 目录结构
 
 ```text
 nexusflow-skills/
-├── skills/                 # 可独立安装的技能，目前为空
+├── skills/                 # 可独立安装的迁移技能
 ├── docs/                   # 安装、编写、兼容性和发布说明
 ├── scripts/                # 校验与打包工具
 ├── tests/                  # 工具测试；后续加入技能场景测试

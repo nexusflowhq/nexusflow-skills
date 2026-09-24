@@ -1,0 +1,4 @@
+interface:
+  display_name: "SPS → NexusFlow"
+  short_description: "转换 SPS 管网算例，核查单位、曲线和稳态／瞬态差异"
+  default_prompt: "使用 $sps-to-nexusflow 转换指定 SPS 算例，保留转换依据并验证 NexusFlow 结果。"

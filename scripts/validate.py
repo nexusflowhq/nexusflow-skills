@@ -8,7 +8,7 @@ from urllib.parse import unquote, urlsplit
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-NAME = re.compile(r"nexusflow-[a-z0-9]+(?:-[a-z0-9]+)*")
+NAME = re.compile(r"(?:nexusflow-[a-z0-9]+(?:-[a-z0-9]+)*|[a-z0-9]+(?:-[a-z0-9]+)*-to-nexusflow)")
 FIELDS = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
 BLOCKED_DIRS = {".git", ".venv", "__pycache__", "node_modules"}
 

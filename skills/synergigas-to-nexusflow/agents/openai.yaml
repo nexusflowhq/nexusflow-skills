@@ -1,0 +1,4 @@
+interface:
+  display_name: "SynergiGas → NexusFlow"
+  short_description: "迁移气体管网模型，校核拓扑端口、边界、气质及稳态瞬态结果"
+  default_prompt: "使用 $synergigas-to-nexusflow 解析我提供的模型，生成 NexusFlow 迁移候选算例及等价性检查报告。"
